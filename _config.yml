@@ -63,7 +63,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: 50f030577ae30a0888eb                            #生成的clientID
   clientSecret: 4d5e11b4dd4adce1ae111592bfdd3adcde9a0160    #生成的clientSecret
-  repo: ThreeStones1029.github.io    #仓库名称
+  repo: blogtalk    #仓库名称
   owner: ThreeStones1029    #github用户名
   admin: ThreeStones1029
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
