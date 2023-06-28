@@ -13,13 +13,13 @@ tags:	工具							#标签
 
 # 一、前言
 
-最近学习open3d的可视化drr与三维椎体，需要导入三维椎体的.ply格式，源文件是.nii.gz格式，但是mimics不能导入.nii.gz，所以需要先利用将slicer将.nii.gz导出为.dcm格式。然后再用mimics将.dcm导出为.nii.gz格式。本文主要作为个人笔记。
+最近学习open3d的可视化drr与三维椎体，需要导入三维椎体的.ply格式，源文件是.nii.gz格式，但是mimics不能导入.nii.gz，所以需要先利用将slicer将.nii.gz导出为.dcm格式。然后再用mimics将.dcm导出为.ply格式。本文主要作为个人笔记。
 
 # 二、步骤
 
 ## 2.1.slicer将.nii.gz格式转为.dcm格式
 
-由于.nii.gz不能直接导入到mimics,需要先利用slicer作为中转站，将.nii.gz导为.dcm文件。本文需要将四个.nii.gz文件导为一个.dcm文件。
+由于.nii.gz不能直接导入到mimics,需要先利用slicer作为中转站，将.nii.gz导为.dcm文件。本文中我的需求是将四个.nii.gz文件导为一个.dcm文件。
 
 ### 2.1.1导入.nii.gz文件
 
