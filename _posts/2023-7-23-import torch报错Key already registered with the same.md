@@ -2,7 +2,7 @@
 layout:     post   				    # 使用的布局
 title:      import torch报错	Key already registered with the same priority: GroupSpatialSoftmax			# 标题 
 subtitle:    Key already registered with the same priority: GroupSpatialSoftmax  #副标题
-date:       2023-07-21 				# 时间
+date:       2023-07-23 				# 时间
 author:     BY ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
