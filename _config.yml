@@ -4,7 +4,7 @@ SEOTitle: ThreeStones Blog
 header-img: img/home-bg.jpg
 email: shuailei1029@gmail.com
 description: "Every failure is leading towards success."
-keyword: "深度学习, python, c++, pytorch,医学图像处理, 目标检测,关键点检测, 图像处理理论, Ubuntu, Qt and VTK，环境搭建, git, 工具, 感想"
+keyword: "深度学习, python, c++, pytorch,医学图像处理, 目标检测,关键点检测, 图像处理理论, Ubuntu, Qt_and_VTK，环境搭建, git, 工具, 感想"
 url: "http://ThreeStones1029.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ThreeStones/ThreeStones.github.io.git" # you code repository
