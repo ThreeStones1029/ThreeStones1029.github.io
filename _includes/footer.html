@@ -3,48 +3,96 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- SNS Link -->
-                {% include sns-links.html center=true %}
+                <ul class="list-inline text-center">
+                    {% if site.RSS %}
+                    <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <!-- add jianshu add target = "_blank" to <a> by BY -->
+                    {% if site.jianshu_username %}
+                            <li>
+                                <a target="_blank" href="https://www.jianshu.com/u/{{ site.jianshu_username }}">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">简</i>
+                                    </span>
+                                </a>
+                            </li>
+                    {% endif %}
+                    {% if site.twitter_username %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
 
-                <p class="copyright text-muted">
-                    <span id="sitetime"></span> <!--显示建站时间的地方放置此代码 可以加上其他代HTML代码加粗颜色等-->
-                    <script language=javascript>
-                        function siteTime(){
-                            window.setTimeout("siteTime()", 1000);
-                            var seconds = 1000;
-                            var minutes = seconds * 60;
-                            var hours = minutes * 60;
-                            var days = hours * 24;
-                            var years = days * 365;
-                            var today = new Date();
-                            var todayYear = today.getFullYear();
-                            var todayMonth = today.getMonth()+1;
-                            var todayDate = today.getDate();
-                            var todayHour = today.getHours();
-                            var todayMinute = today.getMinutes();
-                            var todaySecond = today.getSeconds();
-                            var t1 = Date.UTC(2019,12,27,17,46,00);  //此处填写建站时间 依次为 年,月,日,时,分,秒注意格式 半角,
-                            var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-                            var diff = t2-t1;
-                            var diffYears = Math.floor(diff/years);
-                            var diffDays = Math.floor((diff/days)-diffYears*365);
-                            var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-                            var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-                            var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-                            document.getElementById("sitetime").innerHTML="🕓Mike Lyou's Blog already run "+diffYears+" years "+diffDays+" days "+diffHours+" hours "+diffMinutes+" mins "+diffSeconds+" s";
-                        }
-                        siteTime();
-                    </script>
-                    <br />
-                    <span id="busuanzi_container_site_uv">
-                      👤Total Visitors <span id="busuanzi_value_site_uv"></span> |
-                    </span>
-                    <span id="busuanzi_container_site_pv">
-                      👁️Total Views <span id="busuanzi_value_site_pv"></span>
-                    </span>
-                    <br />
-                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} |
-                    Powered by <a href="http://huangxuan.me">Hux Blog</a>
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    {% if site.zhihu_username %}
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.weibo_username %}
+                    <li>
+                        <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+
+                    {% if site.facebook_username %}
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.github_username %}
+                    <li>
+                        <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if site.linkedin_username %}
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <p class="copyright text-muted">	
+		Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+		Powered by <a href="http://huangxuan.me">Hux Blog</a>
                 </p>
             </div>
         </div>
