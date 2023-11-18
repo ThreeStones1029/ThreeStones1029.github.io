@@ -108,7 +108,7 @@
                             var todayHour = today.getHours();
                             var todayMinute = today.getMinutes();
                             var todaySecond = today.getSeconds();
-                            var t1 = Date.UTC(2019,12,27,17,46,00);  //此处填写建站时间 依次为 年,月,日,时,分,秒注意格式 半角,
+                            var t1 = Date.UTC(2023,6,24,20,00,00);  //此处填写建站时间 依次为 年,月,日,时,分,秒注意格式 半角,
                             var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
                             var diff = t2-t1;
                             var diffYears = Math.floor(diff/years);
@@ -116,7 +116,7 @@
                             var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
                             var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
                             var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-                            document.getElementById("sitetime").innerHTML="🕓Mike Lyou's Blog already run "+diffYears+" years "+diffDays+" days "+diffHours+" hours "+diffMinutes+" mins "+diffSeconds+" s";
+                            document.getElementById("sitetime").innerHTML="🕓ThreeStones's Blog already run "+diffYears+" years "+diffDays+" days "+diffHours+" hours "+diffMinutes+" mins "+diffSeconds+" s";
                         }
                         siteTime();
                     </script>
