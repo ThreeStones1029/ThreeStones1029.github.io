@@ -114,7 +114,6 @@ public:
 ## 总结
 
 * 遍历一次确实不好想到
-* 
 
 # 第三题
 
@@ -224,5 +223,9 @@ public:
 
 [LeetCode142环形链表II](https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html)
 
-## 解法一[]
+## 解法一
+
+~~~c++
+
+~~~
 
