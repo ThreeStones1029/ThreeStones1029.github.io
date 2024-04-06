@@ -19,6 +19,10 @@ tags:	数据结构							#标签
 
 ## 解法一[设置哑结点]
 
+* 时间复杂度: 空间复杂度O(1)
+
+* 空间复杂度: 时间复杂度O(n)
+
 ~~~c++
 class Solution {
 public:
@@ -44,6 +48,10 @@ public:
 ~~~
 
 ## 解法二[不设置哑结点]
+
+* 时间复杂度: 空间复杂度O(1)
+
+* 空间复杂度: 时间复杂度O(n)
 
 ~~~c++
 class Solution {
@@ -220,6 +228,10 @@ private:
 
 ## 解法一[头插法]
 
+* 时间复杂度: 空间复杂度O(n)
+
+* 空间复杂度: 时间复杂度O(n)
+
 ~~~c++
 class Solution {
 public:
@@ -227,7 +239,6 @@ public:
         if (head == nullptr || head->next == nullptr){
             return head;
         }
-        // 头插法 空间复杂度O(n)
         ListNode* cur = head; // 用于遍历原始链表
         ListNode* dummyHead = new ListNode(); // 创建新链表哑节点
         while(cur){
@@ -238,28 +249,61 @@ public:
             cur = cur->next;
         }
         return dummyHead->next;
-        // 
     }
 };
 ~~~
 
 ## 解法二[双指针法]
 
-~~~c++
+* 时间复杂度: 空间复杂度O(1)
 
+* 空间复杂度: 时间复杂度O(n)
+
+~~~c++
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) { 
+        if (head == nullptr || head->next == nullptr){
+            return head;
+        }
+        ListNode* dummyHead = new ListNode(); // 创建哑节点
+        dummyHead->next = head;
+        ListNode* pre = dummyHead;
+        ListNode* cur = head;
+        while (cur){
+            ListNode* temp = new ListNode();
+            temp = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        head->next = nullptr;
+        return pre;
+    }
+};
 ~~~
 
 ## 解法三[递归法]
 
+* 时间复杂度: 空间复杂度O(1)
+
+* 空间复杂度: 时间复杂度O(n)
+
 ~~~c++
 
 ~~~
+
+## 总结
+
+* 最先想到的是双指针法,但是写第一遍没有很快速写出来,然后就先写完了头插法,到第二天感觉更清醒一点写出来双指针法.
+* 递归法是没有想到的,递归的结束条件往往是重点.
+* 感觉链表主要在画图,图画明白了,代码自然而然就能写出来,图画不明白就很难写出来.
 
 # 知识点
 
 ## 链表定义
 
-这里加入了构造函数.
+这里加入了构造函数.C++构造函数有多种写法,
 
 ~~~c++
 struct LinkedNode {
@@ -267,7 +311,6 @@ struct LinkedNode {
         LinkedNode* next;
         LinkedNode(int val):val(val), next(nullptr){}
     };
-
 ~~~
 
 ## 手动释放内存
