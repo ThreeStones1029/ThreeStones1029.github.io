@@ -290,13 +290,27 @@ public:
 * 空间复杂度: 时间复杂度O(n)
 
 ~~~c++
-
+class Solution {
+public:
+    ListNode* reverse(ListNode* pre, ListNode* cur){
+        if (cur==nullptr){
+            return pre;
+        }
+        ListNode* temp = cur->next;
+        cur->next = pre;
+        return reverse(cur, temp);
+    }
+    ListNode* reverseList(ListNode* head) {
+        // 递归法
+        return reverse(nullptr, head);
+    }
+};
 ~~~
 
 ## 总结
 
 * 最先想到的是双指针法,但是写第一遍没有很快速写出来,然后就先写完了头插法,到第二天感觉更清醒一点写出来双指针法.
-* 递归法是没有想到的,递归的结束条件往往是重点.
+* 递归法是没有想到的,递归的结束条件往往是重点,这里利用的思想与双指针一样.
 * 感觉链表主要在画图,图画明白了,代码自然而然就能写出来,图画不明白就很难写出来.
 
 # 知识点
