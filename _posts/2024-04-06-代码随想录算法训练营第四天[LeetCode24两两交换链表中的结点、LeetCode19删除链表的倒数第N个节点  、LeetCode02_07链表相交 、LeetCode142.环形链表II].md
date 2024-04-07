@@ -296,11 +296,39 @@ public:
 
 [LeetCode142环形链表II](https://programmercarl.com/0142.%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8II.html)
 
-## 解法一
+## 解法一[快慢指针]
+
+* 时间复杂度O(n)
+
+* 空间复杂度O(1)
 
 ~~~c++
-
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        ListNode* fast = head;
+        ListNode* slow = head;
+        while (fast && fast->next){
+            fast = fast->next->next;
+            slow = slow->next;
+            //
+            if (fast == slow){
+                ListNode* index1 = fast;
+                ListNode* index2 = head;
+                while (index1!=index2){
+                    index1 = index1->next;
+                    index2 = index2->next;
+                }
+                return index1;
+            }
+        }
+        return nullptr;
+    }
+};
 ~~~
+
+## 总结
+* 只能说快慢指针指针来解这道题确实妙,虽然以前好像做过,但做的时候发现没有真正掌握.
 
 # 知识点
 
