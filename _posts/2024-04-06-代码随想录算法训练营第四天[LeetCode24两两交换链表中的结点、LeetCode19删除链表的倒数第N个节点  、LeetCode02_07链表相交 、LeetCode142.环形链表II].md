@@ -1,7 +1,7 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
 title:      代码随想录算法训练营第四天 				# 标题 
-subtitle:   链表[LeetCode24两两交换链表中的结点、LeetCode19删除链表的倒数第N个节点、LeetCode02_07链表相交、142.环形链表II]#副标题
+subtitle:   链表[LeetCode24两两交换链表中的结点、LeetCode19删除链表的倒数第N个节点、LeetCode160链表相交、LeetCode142环形链表II] #副标题
 date:       2024-04-06 				# 时间
 author:     BY ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
