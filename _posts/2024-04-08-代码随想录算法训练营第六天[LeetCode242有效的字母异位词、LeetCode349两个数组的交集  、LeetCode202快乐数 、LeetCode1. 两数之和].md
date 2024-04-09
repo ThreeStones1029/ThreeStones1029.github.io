@@ -75,20 +75,65 @@ public:
 };
 ~~~
 
-## 解法三[暴力解法]
+## 解法三[暴力解法调库]
 
-* 时间复杂度: O(n)
+* 时间复杂度: O(n * n)
 
 * 空间复杂度: O(1)
 
 ~~~c++
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        // 暴力解法
+        // 先排序
+        sort(s.begin(),s.end());
+        sort(t.begin(),t.end());
+        return s==t;
+    }    
+};
+~~~
 
+## 解法四[暴力解法非调库]
+
+* 时间复杂度: O(n * n)
+* 空间复杂度: O(1)
+
+~~~c++
+class Solution {
+public:
+    string choose_sort(string s){
+        int n = s.size();
+        for (int i = 0; i < n - 1; ++i) {
+            int min_index = i;
+            for (int j = i + 1; j < n; ++j) {
+                if (s[j] < s[min_index]) {
+                    min_index = j;
+                }
+            }
+            // 将未排序部分的最小元素与已排序部分的末尾交换位置
+            int temp = s[i];
+            s[i] = s[min_index];
+            s[min_index] = temp;
+        }
+        return s;
+    }
+    bool isAnagram(string s, string t) {
+        // 暴力解法2
+        // 选择排序
+        s = choose_sort(s);
+        t = choose_sort(t);
+        return s==t;
+    }
+        
+};
 ~~~
 
 ## 总结
 
 * 对于哈希的三种数据结构还不太熟悉,需要熟悉各个结构的时间空间复杂度.
 * 整体来说这道题比较简单, 用哈希法确实可以很快解决.
+* 自己实现的排序会超出时间.
 
 # 第二题
 
@@ -265,12 +310,29 @@ public:
 * 空间复杂度: O(n)
 
 ~~~c++
-
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        // 暴力解法
+        vector<int> result;
+        for (int i = 0; i < nums.size(); i++){
+            for (int j = i + 1; j < nums.size(); j++){
+                if (nums[i] + nums[j] == target){
+                    result.push_back(i);
+                    result.push_back(j);
+                }
+            }
+        }
+        return result;
+    }   
+};
 ~~~
 
 ## 总结
 
 * 对于map的使用有点不熟悉,现在看来应该与python的dict是一样的,猜测cpython的dict就是由map实现的.
+* iter->second表示键值,iter->first表示键.
+* 暴力解法比较简单直接两个for遍历.
 
 # 总结
 
