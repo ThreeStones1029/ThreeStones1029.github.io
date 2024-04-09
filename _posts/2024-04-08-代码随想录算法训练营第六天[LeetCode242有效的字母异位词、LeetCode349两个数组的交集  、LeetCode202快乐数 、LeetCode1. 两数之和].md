@@ -1,6 +1,6 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      2024-04-08-代码随想录算法训练营第六天 				# 标题 
+title:      代码随想录算法训练营第六天 				# 标题 
 subtitle:   哈希表[LeetCode242有效的字母异位词、LeetCode349两个数组的交集、LeetCode202快乐数、LeetCode1两数之和] #副标题
 date:       2024-04-08 				# 时间
 author:     BY ThreeStones1029 						# 作者
