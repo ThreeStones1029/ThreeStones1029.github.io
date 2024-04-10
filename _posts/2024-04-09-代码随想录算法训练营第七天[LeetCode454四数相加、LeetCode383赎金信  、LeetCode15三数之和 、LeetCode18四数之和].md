@@ -102,11 +102,179 @@ public:
 
 [LeetCode15三数之和](https://programmercarl.com/0015.%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C.html)
 
+## 解法一[暴力解法]
 
+* 状态:不通过
+* 原因: 时间复杂度过高
+
+~~~c++
+class Solution {
+public:
+    bool comparison_of_triples(vector<int> &first, vector<int> &second){
+        if ((first[0] == second[0] && first[1] == second[1] && first[2] == second[2])){
+            return true;
+        }
+        if ((first[0] == second[0] && first[1] == second[2] && first[2] == second[1])){
+            return true;
+        }
+        if ((first[0] == second[1] && first[1] == second[0] && first[2] == second[2])){
+            return true;
+        }
+        if ((first[0] == second[1] && first[1] == second[2] && first[2] == second[0])){
+            return true;
+        }
+        if ((first[0] == second[2] && first[1] == second[0] && first[2] == second[1])){
+            return true;
+        }
+        if ((first[0] == second[2] && first[1] == second[1] && first[2] == second[0])){
+            return true;
+        }
+        return false;
+    }
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>> result;
+        for (int i = 0; i < nums.size(); i++){
+            for (int j = i + 1; j < nums.size(); j++){
+                for (int k = j + 1; k < nums.size(); k++){
+                    if (nums[i] + nums[j] + nums[k] == 0){
+                        vector<int> sub_result = {nums[i], nums[j], nums[k]};
+                        bool same = false;
+                        for (int row = 0; row < result.size(); row++){
+                            vector<int> row_result = {result[row][0], result[row][1], result[row][2]};
+                            if (comparison_of_triples(sub_result, row_result)){
+                                same = true;
+                                break;
+                            }
+                        }
+                        if (same == false){
+                            result.push_back(sub_result);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+};
+~~~
+
+## 解法二[双指针法]
+
+* 时间复杂度: O(n * n)
+* 空间复杂度: O(1)
+
+~~~c++
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        // 双指针法
+        vector<vector<int>> result;
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size(); i++){
+            if (nums[i] > 0){
+                return result;
+            }
+            if (i > 0 && nums[i] == nums[i-1]){
+                continue;
+            }
+            int left = i + 1;
+            int right = nums.size() - 1;
+            while(left < right){
+                if (nums[i] + nums[left] + nums[right] > 0){
+                    right--;
+                }
+                else if (nums[i] + nums[left] + nums[right] < 0){
+                    left++;
+                }
+                else{
+                    result.push_back({nums[i], nums[left], nums[right]});
+                    while (right > left && nums[left] == nums[left + 1]){
+                    left++;
+                    }
+                    while (right > left && nums[right] == nums[right - 1]){
+                        right--;
+                    }
+                    left++;
+                    right--;
+                }
+            }
+        }
+        return result;
+    }
+};
+~~~
+
+## 总结
+
+* 这个双指针真的巧妙,对于去重也有很多细节,第一次见真想不到.
+* 暴力法大概率可以运行大半,排除时间限制应该没有问题.
 
 # 第四题
 
 [LeetCode18四数之和](https://programmercarl.com/0018.%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C.html)
 
+## 解法一[双指针法]
+
+* 时间复杂度: O(n * n)
+* 空间复杂度: O(1)
+
+~~~c++
+class Solution {
+public:
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> result;
+        sort(nums.begin(), nums.end());
+        for (int k = 0; k < nums.size(); k++) {
+            // 剪枝处理
+            if (nums[k] > target && nums[k] >= 0) {
+            	break; // 这里使用break，统一通过最后的return返回
+            }
+            // 对nums[k]去重
+            if (k > 0 && nums[k] == nums[k - 1]) {
+                continue;
+            }
+            for (int i = k + 1; i < nums.size(); i++) {
+                // 2级剪枝处理
+                if (nums[k] + nums[i] > target && nums[k] + nums[i] >= 0) {
+                    break;
+                }
+
+                // 对nums[i]去重
+                if (i > k + 1 && nums[i] == nums[i - 1]) {
+                    continue;
+                }
+                int left = i + 1;
+                int right = nums.size() - 1;
+                while (right > left) {
+                    // nums[k] + nums[i] + nums[left] + nums[right] > target 会溢出
+                    if ((long) nums[k] + nums[i] + nums[left] + nums[right] > target) {
+                        right--;
+                    // nums[k] + nums[i] + nums[left] + nums[right] < target 会溢出
+                    } else if ((long) nums[k] + nums[i] + nums[left] + nums[right]  < target) {
+                        left++;
+                    } else {
+                        result.push_back(vector<int>{nums[k], nums[i], nums[left], nums[right]});
+                        // 对nums[left]和nums[right]去重
+                        while (right > left && nums[right] == nums[right - 1]) right--;
+                        while (right > left && nums[left] == nums[left + 1]) left++;
+
+                        // 找到答案时，双指针同时收缩
+                        right--;
+                        left++;
+                    }
+                }
+
+            }
+        }
+        return result;
+    }
+};
+~~~
+
+## 总结
+
+* 虽然和上一题有点像,但需要注意的细节更多.
+
 # 总结
 
+* 总体来说第三体和第四题还是挺难的,对于双指针确实没有想到这么用来解题.
