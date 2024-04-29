@@ -6,7 +6,7 @@ date:       2024-04-29 				# 时间
 author:     BY ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
-tags:	ubuntu							#标签
+tags:	Ubuntu							#标签
 ---
 
 
