@@ -248,7 +248,28 @@ public:
 * 空间复杂度O(n)
 
 ~~~c++
-
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        stack<TreeNode*> node_stack;
+        if (root == NULL) return 0;
+        TreeNode* cur = root;
+        int num = 0;
+        while (cur != NULL || !node_stack.empty()){
+            if (cur != NULL){
+                node_stack.push(cur);
+                cur = cur->left;
+            }
+            else{
+                cur = node_stack.top();
+                node_stack.pop();
+                cur = cur->right;
+                num += 1;
+            }
+        }
+        return num;
+    }
+};
 ~~~
 
 ## 解法三[后序遍历迭代法]
@@ -276,49 +297,196 @@ public:
 };
 ~~~
 
-## 解法四[前序遍历递归法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法五[中序遍历递归法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法六[后序遍历递归法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法七[前序遍历统一迭代法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法八[中序遍历统一迭代法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法九[后序遍历统一迭代法]
-
-* 时间复杂度O(n)
-* 空间复杂度O(n)
-
-## 解法十[层序遍历迭代法]
+## 解法四[后序遍历递归法]
 
 * 时间复杂度O(n)
 * 空间复杂度O(n)
 
 ~~~c++
+class Solution {
+public:
+    int getNodesNum(TreeNode* cur) {
+        if (cur == NULL) return 0;
+        int leftNum = getNodesNum(cur->left);      // 左
+        int rightNum = getNodesNum(cur->right);    // 右
+        int treeNum = leftNum + rightNum + 1;      // 中
+        return treeNum;
+    }
 
+    int countNodes(TreeNode* root) {
+        return getNodesNum(root);
+    }
+};
+~~~
+
+## 解法五[前序遍历统一迭代法]
+
+* 时间复杂度O(n)
+* 空间复杂度O(n)
+
+~~~c++
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        int num = 0;
+        stack<TreeNode*> node_stack;
+        if (root != NULL) node_stack.push(root);
+        while (!node_stack.empty()){
+            TreeNode* cur = node_stack.top();
+            if (cur != NULL){
+                // 入栈顺序右左中,出栈顺序中左右
+                node_stack.pop();
+                if (cur->right != nullptr) node_stack.push(cur->right);
+                if (cur->left != nullptr) node_stack.push(cur->left);
+                node_stack.push(cur);
+                node_stack.push(nullptr);
+            }
+            else{
+                // 只有遇到空节点的时候，才将下一个节点放进结果集
+                node_stack.pop();
+                cur = node_stack.top();
+                num += 1;
+                node_stack.pop();
+            }
+        }
+        return num;
+    }
+};
+~~~
+
+## 解法六[中序遍历统一迭代法]
+
+* 时间复杂度O(n)
+* 空间复杂度O(n)
+
+~~~c++
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        int num = 0;
+        stack<TreeNode*> node_stack;
+        if (root != NULL) node_stack.push(root);
+        while (!node_stack.empty()){
+            TreeNode* cur = node_stack.top();
+            if (cur != NULL){
+                // 入栈顺序右中左,出栈顺序左中右
+                node_stack.pop();
+                if (cur->right != nullptr) node_stack.push(cur->right);
+                node_stack.push(cur);
+                node_stack.push(nullptr);
+                if (cur->left != nullptr) node_stack.push(cur->left);
+            }
+            else{
+                // 只有遇到空节点的时候，才将下一个节点放进结果集
+                node_stack.pop();
+                cur = node_stack.top();
+                num += 1;
+                node_stack.pop();
+            }
+        }
+        return num;
+    }
+};
+~~~
+
+## 解法七[后序遍历统一迭代法]
+
+* 时间复杂度O(n)
+* 空间复杂度O(n)
+
+~~~c++
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        int num = 0;
+        stack<TreeNode*> node_stack;
+        if (root != NULL) node_stack.push(root);
+        while (!node_stack.empty()){
+            TreeNode* cur = node_stack.top();
+            if (cur != NULL){
+                // 入栈顺序中右左,出栈顺序左右中
+                node_stack.pop();
+                node_stack.push(cur);
+                node_stack.push(nullptr);
+                if (cur->right != nullptr) node_stack.push(cur->right);
+                if (cur->left != nullptr) node_stack.push(cur->left);
+            }
+            else{
+                // 只有遇到空节点的时候，才将下一个节点放进结果集
+                node_stack.pop();
+                cur = node_stack.top();
+                num += 1;
+                node_stack.pop();
+            }
+        }
+        return num;
+    }
+};
+~~~
+
+## 解法八[层序遍历迭代法]
+
+* 时间复杂度O(n)
+* 空间复杂度O(n)
+
+~~~c++
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        int num = 0;
+        if (root == NULL) return num;
+        queue<TreeNode*> node_queue;
+        node_queue.push(root);
+        while (!node_queue.empty()){
+            int size = node_queue.size();
+            for (int i = 0; i < size; i++){
+                TreeNode* cur = node_queue.front();
+                if (cur->left != NULL) node_queue.push(cur->left);
+                if (cur->right != NULL) node_queue.push(cur->right);
+                node_queue.pop(); 
+            }
+            num += size;
+        }
+        return num;
+    }
+};
+~~~
+
+## 解法九[完全二叉树解法]
+
+* 时间复杂度O(log(n) * log(n))
+* 空间复杂度O(log(n))
+
+~~~c++
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        if (root == nullptr) return 0;
+        int left_depth = 0;
+        int right_depth = 0;
+        TreeNode* left = root->left;
+        TreeNode* right = root->right;
+        while (left){
+            left = left->left;
+            left_depth++;
+        }
+        while (right){
+            right = right->right;
+            right_depth++;
+        }
+        if (left_depth == right_depth) {
+            return (2 << left_depth) - 1;
+        }
+        return countNodes(root->left) + countNodes(root->right) + 1;
+    }
+};
 ~~~
 
 ## 总结
 
-* 这道题感觉可以用来复习几种遍历方式,包括递归,迭代,统一迭代等.
+* 这道题感觉可以用来复习几种遍历方式,包括递归,迭代,统一迭代等。
+* 考虑完全二叉树可以用递归法求子树的结点数量。
 
 # 总结
 
-感觉归根结底还是在于几种遍历方式是否熟悉,特别最后一题都可以用十种方式来遍历,在遍历的时候统计结点数量即可.
+感觉归根结底还是在于几种遍历方式是否熟悉,特别最后一题都可以用十种方式来遍历,在遍历的时候统计结点数量即可。
