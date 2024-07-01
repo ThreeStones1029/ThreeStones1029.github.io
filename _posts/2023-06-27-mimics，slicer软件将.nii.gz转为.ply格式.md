@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      mimics，slicer软件将.nii.gz转为.ply格式 				# 标题 
 subtitle:   工具使用 #副标题
 date:       2023-06-27 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	工具							#标签

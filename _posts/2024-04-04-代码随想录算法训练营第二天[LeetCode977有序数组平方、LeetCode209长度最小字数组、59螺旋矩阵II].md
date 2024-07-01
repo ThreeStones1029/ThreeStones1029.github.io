@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      代码随想录算法训练营第二天				# 标题 
 subtitle:   数组[LeetCode977有序数组平方、LeetCode209长度最小字数组、59螺旋矩阵II] #副标题
 date:       2024-04-04 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	数据结构							#标签

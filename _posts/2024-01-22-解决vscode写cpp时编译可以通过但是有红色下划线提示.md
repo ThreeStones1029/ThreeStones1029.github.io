@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      vscode 				# 标题 
 subtitle:   写cpp时编译器报错 #副标题
 date:       2024-01-22 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	工具							#标签

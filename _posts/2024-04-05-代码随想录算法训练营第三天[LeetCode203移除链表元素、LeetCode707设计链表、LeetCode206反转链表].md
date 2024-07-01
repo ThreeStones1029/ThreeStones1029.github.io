@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      代码随想录算法训练营第三天				# 标题 
 subtitle:   链表[LeetCode203移除链表元素、LeetCode707设计链表、LeetCode206反转链表] #副标题
 date:       2024-04-05 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	数据结构							#标签

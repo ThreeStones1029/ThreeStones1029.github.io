@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      代码随想录算法训练营第十一天 				# 标题 
 subtitle:   栈和队列[LeetCode20有效的括号、LeetCode1047删除字符串中所有的相邻重复项、LeetCode150逆波兰表达式求值] #副标题
 date:       2024-04-13 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	数据结构							#标签

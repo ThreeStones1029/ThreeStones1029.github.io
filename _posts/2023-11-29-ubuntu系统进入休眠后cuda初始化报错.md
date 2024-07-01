@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      torch.cuda.is_available()报错 				# 标题 
 subtitle:   ubuntu系统进入休眠后cuda初始化报错 #副标题
 date:       2023-11-29 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	pytorch							#标签
