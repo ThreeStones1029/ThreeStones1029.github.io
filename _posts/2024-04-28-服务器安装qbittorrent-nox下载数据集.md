@@ -3,7 +3,7 @@ layout:     post   				    # 使用的布局（不需要改）
 title:      服务器安装qbittorrent-nox下载数据集 				# 标题 
 subtitle:   数据集下载 #副标题
 date:       2024-04-29 				# 时间
-author:     BY ThreeStones1029 						# 作者
+author:     ThreeStones1029 						# 作者
 header-img: img/about_bg.jpg 	#这篇文章标题背景图片
 catalog: true 						# 是否归档
 tags:	Ubuntu							#标签
