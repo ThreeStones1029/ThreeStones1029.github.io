@@ -40,18 +40,20 @@ header-img: "img/about_bg.jpg"
         <li>2024.01 <strong>脊柱DRR生成与标注</strong></li>
         <a href="https://github.com/ThreeStones1029/drr_utils"> python代码</a> 和 <a href="https://github.com/ThreeStones1029/drr_utils_cpp"> C++代码 </a>
         <div>
-            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/drr_utils.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/drr_utils.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
         </div>
         将脊柱CT分割算法分割的mask结果，利用ITK投影，根据mask的边界得到水平矩形框以及旋转矩形框，同时得到投影的mask作为分割标注。
         <li>2023.11-2023.12 <strong>基于nnunet的椎骨分割</strong></li> 
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/nnunet_seg.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
         </div>
+        首先预测对椎体进行语义识别，根据检测框裁剪出每一节椎体，然后使用nnunet进行0,1分割得到每一节的分割结果。
         <li>2023.07-2023.08 <strong>基于HRNet的椎骨关键点检测</strong></li> 
         数据标注
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/$OC5X%5B7XAO6SHURBG86%7B2ML.png" alt="Description of the first image" style="width:400px;height:auto; display:inline-block;">
         </div>
+        数据标注通过open3d将椎体上的3维标志点椎体上平面中心、椎体下平面中心和左右椎弓根四个点投影到DRR上。
         结果
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/HRNet_AP.jpg" alt="Description of the first image" style="width:300px;height:auto; display:inline-block; margin-right:10px;">
@@ -75,17 +77,48 @@ header-img: "img/about_bg.jpg"
     <p>I primarily worked under the guidance of Prof. JunFeng Jiang on medical image processing.  
        I participated in several projects and tasks at the ChangZhou Key Laboratory of Digital Technology on Graphics and Orthopaedic implants.  
        My work involved object detection、image segmentation、keypoints recognition and 3D/2D registration.</p>
-
-    <p>This is my personal blog, through making Github Pages and Jekyll.My GitHub  👉 <a href="http://github.com/ThreeStones1029">Github·ThreeStones</a>.</p>
-
-    <h5>Talks</h5>
+    <p>My github home page<a href="https://github.com/ThreeStones1029">👉GitHub·ThreeStones</a> and CSDN home page<a href="https://blog.csdn.net/SL1029_?spm=1000.2115.3001.5343">👉SL1029</a>。</p>
+    
+    <h5>Main Projects</h5>
 
     <ul>
-    <li><a href="https://github.com">GitHub</a></li>
-    <li><a href="http://jekyll.com.cn/">jekyll</a></li>
-    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-    <li><a href="https://ThreeStones1029.github.io">ThreeStones</a></li>
+        <li>2024.04-now <strong>Contrastive Learning for Fracture recognition in Intraoperative Radiographs</strong></li> 
+        <li>2023.07-2024.03 <strong>Vertebrae Recognition on Intraoperative Radiographs Using Abductive Learning</strong></li>
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/%E4%B8%AD%E6%96%87%E6%B5%81%E7%A8%8B.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
+        </div>
+        <li>2023.03-2023.06 <strong>Vertebral segmentation and localization in spine CT</strong></li>
     </ul>
+
+    <h5>Other Projects</h5>
+    <ul>
+        <li>2024.01 <strong>Spine DRR generation and annotation</strong></li>
+        <a href="https://github.com/ThreeStones1029/drr_utils"> python code</a> 和 <a href="https://github.com/ThreeStones1029/drr_utils_cpp"> C++ code </a>
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/drr_utils.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
+        </div>
+        The ITK projection is used to obtain the horizontal rectangular box and the rotating rectangular box according to the boundary of the mask. At the same time, the projected mask is obtained as the segmentation label.
+        <li>2023.11-2023.12 <strong>Vertebra segmentation based on nnunet</strong></li> 
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/nnunet_seg.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
+        </div>
+        Firstly, the semantic recognition of the vertebrae is performed, and each vertebra is cut out according to the detection box. Then nnunet is used to perform 0,1 segmentation to obtain the segmentation results of each segment.
+        <li>2023.07-2023.08 <strong>Keypoint detection of vertebrae based on HRNet</strong></li> 
+        Data annotation
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/$OC5X%5B7XAO6SHURBG86%7B2ML.png" alt="Description of the first image" style="width:400px;height:auto; display:inline-block;">
+        </div>
+        Data annotation was performed by open3d to project four points on the vertebral body, including the center of the upper plane of the vertebral body, the center of the lower plane of the vertebral body, and the left and right pedicles, onto the DRR.
+        Results
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/HRNet_AP.jpg" alt="Description of the first image" style="width:300px;height:auto; display:inline-block; margin-right:10px;">
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/))T8%5B%5B4BDC1GRR%7DZ@AQ$%60CK.png" alt="Description of the second image" style="width:300px;height:auto; display:inline-block;">
+        </div>
+
+    </ul>
+    
+
+    
 </div> 
 
 <!-- Handle Language Change -->
