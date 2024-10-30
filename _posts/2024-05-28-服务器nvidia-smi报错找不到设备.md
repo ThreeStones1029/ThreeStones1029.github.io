@@ -1,6 +1,6 @@
 ---
 layout:     post   				    # 使用的布局（不需要改）
-title:      Unable to determine the device handle for GPU0000:C2:00.0 Unknown Error # 标题 
+title:      Unable to determine the device handle for GPU0000 C2 00.0 Unknown Error # 标题 
 subtitle:   Ubuntu #副标题
 date:       2024-05-28				# 时间
 author:     ThreeStones1029 						# 作者
