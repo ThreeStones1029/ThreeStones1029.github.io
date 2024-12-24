@@ -43,6 +43,7 @@ header-img: "img/about_bg.jpg"
             在前面CT分割项目的基础上，对每一节椎节进行三标签的分割，将椎节分割为椎体、椎弓根、其他三部分。在此基础上进行螺钉规划，具体主要根据数值优化的方法，来约束螺钉的起点、方向、大小和长度。
             约束条件主要来自于临床医生手术总结的经验，例如螺钉和上终板的夹角、螺钉和中轴面的夹角等。
         </p>
+
         <li>2024.11-2024.12 <strong>基于改进yolov5的术中X线片旋转检测+标志点识别</strong></li>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/yolov5_obb_point1.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
@@ -50,9 +51,12 @@ header-img: "img/about_bg.jpg"
         <p style="text-align: justify; text-justify: inter-ideograph;">
             改进术中X线片检测，将水平检测框改进为旋转检测框，同时为了提升2D-3D配准准确率，加入椎骨中心点识别，改进yolov5同时输出旋转检测框和关键点。
         </p>
+
         <li>2024.08-2024.09 <strong>基于ffmpeg的多线程音视频解码编码系统</strong></li> 
+
         <li>2024.04-2024.07 <strong>基于对比学习的术中X线片骨折识别</strong></li> 
-        <li>2023.08-2024.04 <strong>基于溯因学习的术中X线片椎骨识别(BIBM2024)</strong></li>
+
+        <li>2023.12-2024.04 <strong>基于溯因学习的术中X线片椎骨识别(BIBM2024)</strong></li>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/%E4%B8%AD%E6%96%87%E6%B5%81%E7%A8%8B.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
         </div>
@@ -62,14 +66,7 @@ header-img: "img/about_bg.jpg"
             此外，我们提出了一种集成技术，将椎体语义检测与实例检测相结合。为了进一步提高性能，我们合成了一个数据集，并对BUU数据集进行了注释，用于网络预训练。消融研究证实了我们的方法中提出的组件的有效性。
             此外，对比分析表明，我们的方法显着超越了领先的目标检测算法，以最少的注释表现出卓越的性能。
         </p>
-        <li>2023.02-2023.07 <strong>脊柱CT椎骨分割与定位</strong></li>
-        <div>
-            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/795b8e24c2a739450024cc895067a7e.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
-        </div>
-    </ul>
 
-    <h5>其他项目</h5>
-    <ul>
         <li>2024.01 <strong>脊柱DRR生成与标注</strong></li>
         <a href="https://github.com/ThreeStones1029/drr_utils"> python代码</a> 和 <a href="https://github.com/ThreeStones1029/drr_utils_cpp"> C++代码 </a>
         <div>
@@ -79,26 +76,33 @@ header-img: "img/about_bg.jpg"
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/87ba5c6d82449c55216500d72d935d57.JPG" alt="Description of the first image" style="width:310px;height:auto; display:inline-block; margin-right:10px;">
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/7133247c4a632362151af6f9a458f1c0.JPG" alt="Description of the second image" style="width:300px;height:auto; display:inline-block;">
         </div>
-        将脊柱CT分割算法分割的mask结果，利用ITK投影，根据mask的边界得到水平矩形框以及旋转矩形框，同时得到投影的mask作为分割标注。
+        <p style="text-align: justify; text-justify: inter-ideograph;">
+            将脊柱CT分割算法分割的mask结果，利用ITK投影，根据mask的边界得到水平矩形框以及旋转矩形框，同时得到投影的mask作为分割标注。
+        </p>
+
         <li>2023.11-2023.12 <strong>基于nnunet的椎骨分割</strong></li> 
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/nnunet_seg.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
         </div>
-        首先预测对椎体进行语义识别，根据检测框裁剪出每一节椎体，然后使用nnunet进行0,1分割得到每一节的分割结果。
+        <p style="text-align: justify; text-justify: inter-ideograph;">
+            首先预测对椎体进行语义识别，根据检测框裁剪出每一节椎体，然后使用nnunet进行0,1分割得到每一节的分割结果。
+        </p>
+
         <li>2023.07-2023.08 <strong>基于HRNet的椎骨关键点检测</strong></li> 
-        数据标注
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/$OC5X%5B7XAO6SHURBG86%7B2ML.png" alt="Description of the first image" style="width:400px;height:auto; display:inline-block;">
         </div>
-        数据标注通过open3d将椎体上的3维标志点椎体上平面中心、椎体下平面中心和左右椎弓根四个点投影到DRR上。
-        结果
+        <p style="text-align: justify; text-justify: inter-ideograph;"> 数据标注通过open3d将椎体上的3维标志点椎体上平面中心、椎体下平面中心和左右椎弓根四个点投影到DRR上。</p>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/HRNet_AP.jpg" alt="Description of the first image" style="width:300px;height:auto; display:inline-block; margin-right:10px;">
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/))T8%5B%5B4BDC1GRR%7DZ@AQ$%60CK.png" alt="Description of the second image" style="width:300px;height:auto; display:inline-block;">
         </div>
 
+        <li>2023.02-2023.07 <strong>脊柱CT椎骨分割与定位</strong></li>
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/795b8e24c2a739450024cc895067a7e.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
+        </div>
     </ul>
-    <p></p>
 </div>
 
 <!-- English Version -->
@@ -143,7 +147,7 @@ header-img: "img/about_bg.jpg"
         </p>
         <li>2024.08-2024.09 <strong>Multithreaded audio and video decoding coding system based on ffmpeg</strong></li> 
         <li>2024.04-2024.07 <strong>Contrastive Learning for Fracture recognition in Intraoperative Radiographs</strong></li> 
-        <li>2023.08-2024.04 <strong>Vertebrae Recognition on Intraoperative Radiographs Using Abductive Learning(BIBM2024)</strong></li>
+        <li>2023.12-2024.04 <strong>Vertebrae Recognition on Intraoperative Radiographs Using Abductive Learning(BIBM2024)</strong></li>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/%E5%9F%BA%E4%BA%8E%E6%BA%AF%E5%9B%A0%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%9C%AF%E4%B8%ADX%E7%BA%BF%E7%89%87%E6%A4%8E%E9%AA%A8%E8%AF%86%E5%88%AB%E8%8B%B1%E6%96%87%E6%B5%81%E7%A8%8B.png" alt="Description of the first image" style="width:500px;height:auto; display:inline-block;">
         </div>
@@ -156,41 +160,42 @@ header-img: "img/about_bg.jpg"
             To further augment performance, we have synthesized a dataset and annotated the BUU dataset for network pretraining. Ablation studies validate the efficacy of the proposed components in our methodology. 
             Furthermore, comparative analyses reveal that our approach significantly surpasses leading object detection algorithms, exhibiting superior performance with minimal annotations.
         </p>
-        <li>2023.02-2023.07 <strong>Vertebral segmentation and localization in spine CT</strong></li>
-        <div>
-            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/795b8e24c2a739450024cc895067a7e.png" alt="CT segmentation" style="width:800px;height:auto; display:inline-block;">
-        </div>
-    </ul>
 
-    <h5>Other Projects</h5>
-    <ul>
         <li>2024.01 <strong>Spine DRR generation and annotation</strong></li>
         <a href="https://github.com/ThreeStones1029/drr_utils"> python code</a> 和 <a href="https://github.com/ThreeStones1029/drr_utils_cpp"> C++ code </a>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/drr_utils.png" alt="Drr utils" style="width:500px;height:auto; display:inline-block;">
         </div>
-        The ITK projection is used to obtain the horizontal rectangular box and the rotating rectangular box according to the boundary of the mask. At the same time, the projected mask is obtained as the segmentation label.
+        <p style="text-align: justify;">
+            The ITK projection is used to obtain the horizontal rectangular box and the rotating rectangular box according to the boundary of the mask. At the same time, the projected mask is obtained as the segmentation label.
+        </p>
+        
         <li>2023.11-2023.12 <strong>Vertebra segmentation based on nnunet</strong></li> 
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/%E5%9F%BA%E4%BA%8Ennunet%E7%9A%84%E6%A4%8E%E9%AA%A8%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%8B%B1%E6%96%87%E6%B5%81%E7%A8%8B.png" alt="Description of the first image" style="width:800px;height:auto; display:inline-block;">
         </div>
-        Firstly, the semantic recognition of the vertebrae is performed, and each vertebra is cut out according to the detection box. Then nnunet is used to perform 0,1 segmentation to obtain the segmentation results of each segment.
+        <p style="text-align: justify;">
+            Firstly, the semantic recognition of the vertebrae is performed, and each vertebra is cut out according to the detection box. Then nnunet is used to perform 0,1 segmentation to obtain the segmentation results of each segment.
+        </p>
+        
+        
         <li>2023.07-2023.08 <strong>Keypoint detection of vertebrae based on HRNet</strong></li> 
-        Data annotation
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/$OC5X%5B7XAO6SHURBG86%7B2ML.png" alt="Description of the first image" style="width:400px;height:auto; display:inline-block;">
         </div>
-        Data annotation was performed by open3d to project four points on the vertebral body, including the center of the upper plane of the vertebral body, the center of the lower plane of the vertebral body, and the left and right pedicles, onto the DRR.
-        Results
+        <p style="text-align: justify;">
+            Data annotation was performed by open3d to project four points on the vertebral body, including the center of the upper plane of the vertebral body, the center of the lower plane of the vertebral body, and the left and right pedicles, onto the DRR.
+        </p>
         <div>
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/HRNet_AP.jpg" alt="HRNet_AP" style="width:300px;height:auto; display:inline-block; margin-right:10px;">
             <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/))T8%5B%5B4BDC1GRR%7DZ@AQ$%60CK.png" alt="Description of the second image" style="width:300px;height:auto; display:inline-block;">
         </div>
 
+        <li>2023.02-2023.07 <strong>Vertebral segmentation and localization in spine CT</strong></li>
+        <div>
+            <img src="https://cdn.jsdelivr.net/gh/ThreeStones1029/blogimages/img/795b8e24c2a739450024cc895067a7e.png" alt="CT segmentation" style="width:800px;height:auto; display:inline-block;">
+        </div>
     </ul>
-    
-
-    
 </div> 
 
 <!-- Handle Language Change -->
