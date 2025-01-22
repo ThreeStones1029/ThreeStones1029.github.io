@@ -1,8 +1,16 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: ThreeStones1029 2320218115@qq.com
+ * @Date: 2024-04-04 10:14:05
+ * @LastEditors: ShuaiLei
+ * @LastEditTime: 2025-01-22 11:10:03
+-->
 [TOC]
 
 # 一、个人博客搭建
 
-在CSDN写了一段时间后，还是希望自己能后搭建属于自己的博客。
+在CSDN写了一段时间后，还是希望自己能搭建属于自己的博客。
 
 # 二、功能添加
 ## 2.1.添加评论功能（2023-6-24）
