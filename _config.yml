@@ -96,13 +96,12 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "BY",
-        href: "https://qiubaiying.github.io/"
-    },{
         title: "CSDN.SL1029",
         href: "https://blog.csdn.net/SL1029_?spm=1000.2115.3001.5343"
-    },{
-        title: "HUX",
-        href: "https://huangxuan.me/"
+    },
+    {
+        title: "linxin",
+        href: "https://linxin.blog/"
+
     }
 ]
